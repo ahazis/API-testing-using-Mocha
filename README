@@ -1,0 +1,40 @@
+## Using
+  1. Supertest - digunakan untuk membuat API Call
+  2. Mocha - Test Framework
+  3. Chai - Assertions
+  4. Mochawesome - reporting
+
+## Install 
+  npm install supertest mocha chai mochawesome --save-dev
+  npm install --save-dev chai-json-schema
+
+## Tambahkan pada packege.json
+  {
+    "name": "1",
+    "version": "1.0.0",
+    "type": "module",     => pakai ini kalau tidak menggunakan sintaks require (optional)
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "mocha": "mocha"    => pastikan ini ada
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+      "chai": "^4.3.10",  => pastikan versi ini
+      "mocha": "^10.7.3",
+      "mochawesome": "^7.1.3",
+      "supertest": "^7.0.0"
+    }
+  }
+
+## Run
+npm run mocha
+mocha
+npx mocha --reporter mochawesome => guna membuka mocha report
+
+
+
+

@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-01T17:32:23.782Z",
+    "end": "2024-09-01T17:32:25.530Z",
+    "duration": 1748,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b50f2ac-8dde-4a20-bc3d-93a433d4db24",
+      "title": "",
+      "fullFile": "D:\\QA\\API Testing with mocha\\1\\test\\api_test.js",
+      "file": "\\test\\api_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51dee988-26f6-46eb-a065-e48037b9c664",
+          "title": "API Test",
+          "fullFile": "D:\\QA\\API Testing with mocha\\1\\test\\api_test.js",
+          "file": "\\test\\api_test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test case 1 Get Request",
+              "fullTitle": "API Test Test case 1 Get Request",
+              "timedOut": false,
+              "duration": 192,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n    .get('/api/users?page=2')\n// console.log(response.statusCode)\n// console.log(response.body)\n//------------------------------------------------// assert \nexpect(response.statusCode).to.equal(200)\nexpect(response.body.data[0].first_name).to.equal('Michael')\nexpect(response.body).to.be.jsonSchema(GetSchema)",
+              "err": {},
+              "uuid": "b24905ce-3bce-490a-b535-8605b6c87d50",
+              "parentUUID": "51dee988-26f6-46eb-a065-e48037b9c664",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test case 2 Post Request",
+              "fullTitle": "API Test Test case 2 Post Request",
+              "timedOut": false,
+              "duration": 535,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const bodyPOST = {\n    \"name\": \"morpheus\",\n    \"job\": \"zion resident\"\n}\nconst response = await request(BASE_URL)\n    .post('/api/users')\n    .send(bodyPOST)\n//------------------------------------------------// assert\nexpect(response.statusCode).to.equal(201)\nexpect(response.body.name).to.equal('morpheus')\nexpect(response.body).to.be.jsonSchema(PostSchema)",
+              "err": {},
+              "uuid": "1a1a1f89-e0a8-4753-b423-1f7ed05179fe",
+              "parentUUID": "51dee988-26f6-46eb-a065-e48037b9c664",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test case 3 Put Request",
+              "fullTitle": "API Test Test case 3 Put Request",
+              "timedOut": false,
+              "duration": 582,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const bodyPUT = {\n    \"name\": \"morpheus\",\n    \"job\": \"zion resident\"\n}\nconst response = await request(BASE_URL)\n    .put('/api/users/2')\n    .send(bodyPUT)\n//------------------------------------------------// assert\nexpect(response.statusCode).to.equal(200)\nexpect(response.body.name).to.equal('morpheus')\nexpect(response.body).to.be.jsonSchema(PutSchema)",
+              "err": {},
+              "uuid": "3090b284-370e-41ad-b1b6-ff8baf6d5fb7",
+              "parentUUID": "51dee988-26f6-46eb-a065-e48037b9c664",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test case 4 Delete Request",
+              "fullTitle": "API Test Test case 4 Delete Request",
+              "timedOut": false,
+              "duration": 433,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n    .delete('/api/users/2')\n//------------------------------------------------// assert\nexpect(response.statusCode).to.equal(204)",
+              "err": {},
+              "uuid": "a1c6b40c-698e-490e-8bae-56474dca699f",
+              "parentUUID": "51dee988-26f6-46eb-a065-e48037b9c664",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b24905ce-3bce-490a-b535-8605b6c87d50",
+            "1a1a1f89-e0a8-4753-b423-1f7ed05179fe",
+            "3090b284-370e-41ad-b1b6-ff8baf6d5fb7",
+            "a1c6b40c-698e-490e-8bae-56474dca699f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1742,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
